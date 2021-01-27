@@ -1,0 +1,47 @@
+.ry-switch {
+  width: 6rem;
+}
+.ry-switch label {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem @greyLight-2, -0.2rem -0.2rem 0.5rem @white;
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  cursor: pointer;
+  border-radius: 1.6rem;
+}
+.ry-switch label::after {
+  content: '';
+  position: absolute;
+  left: 0.4rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: @greyDark;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.ry-switch label::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(330deg, @primary-dark 0%, @primary 50%, @primary-light 100%);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.ry-switch input {
+  display: none;
+}
+.ry-switch input:checked ~ label::before {
+  opacity: 1;
+}
+.ry-switch input:checked ~ label::after {
+  left: 57%;
+  background: @greyLight-1;
+}

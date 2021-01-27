@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Field, Form, Input } from '..';
+import { RYField, RYForm, RYInput, RYButton, RYSwitch } from '..';
 
 export default function RYFormExample() {
   const { current: rules } = useRef({
@@ -8,7 +8,7 @@ export default function RYFormExample() {
   });
 
   return (
-    <Form
+    <RYForm
       onFinish={state => {
         console.log('success', state);
       }}
@@ -16,15 +16,18 @@ export default function RYFormExample() {
         console.log('err', err);
       }}
     >
-      <Field name="phone" rules={rules.phone}>
-        <Input placeholder="please input your phone" />
-      </Field>
-      <Field name="code" rules={rules.code}>
-        <Input placeholder="please input your code" />
-      </Field>
-      <Field>
-        <button className="ry-btn">login</button>
-      </Field>
-    </Form>
+      <RYField name="phone" rules={rules.phone}>
+        <RYInput placeholder="please input your phone" />
+      </RYField>
+      <RYField name="code" rules={rules.code}>
+        <RYInput placeholder="please input your code" />
+      </RYField>
+      <RYField>
+        <RYSwitch />
+      </RYField>
+      <RYField>
+        <RYButton>login</RYButton>
+      </RYField>
+    </RYForm>
   );
 }

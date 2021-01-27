@@ -1,20 +1,3 @@
-@primary-light: #8abdff;
-@primary: #6d5dfc;
-@primary-dark: #5b0eeb;
-@white: #ffffff;
-@greyLight-1: #e4ebf5;
-@greyLight-2: #c8d0e7;
-@greyLight-3: #bec8e4;
-@greyDark: #9baacf;
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
 html {
   box-sizing: border-box;
   font-size: 12px;
@@ -23,7 +6,7 @@ html {
 }
 
 /*  SEARCH  */
-.ry-input {
+.ry-field {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   position: relative;
@@ -32,49 +15,17 @@ html {
   -webkit-box-align: center;
   align-items: center;
   margin: 10px;
-}
-.ry-input-item {
-  width: 20.4rem;
-  height: 4rem;
-  border: none;
-  border-radius: 1rem;
-  font-size: 1.4rem;
-  padding-left: 3.8rem;
-  box-shadow: inset 0.2rem 0.2rem 0.5rem @greyLight-2, inset -0.2rem -0.2rem 0.5rem @white;
-  background: none;
-  font-family: inherit;
-  color: @greyDark;
-}
-.ry-input-item::-webkit-input-placeholder {
-  color: @greyLight-3;
-}
-.ry-input-item::-moz-placeholder {
-  color: @greyLight-3;
-}
-.ry-input-item:-ms-input-placeholder {
-  color: @greyLight-3;
-}
-.ry-input-item::-ms-input-placeholder {
-  color: @greyLight-3;
-}
-.ry-input-item::placeholder {
-  color: @greyLight-3;
-}
-.ry-input-item:focus {
-  outline: none;
-  box-shadow: 0.3rem 0.3rem 0.6rem @greyLight-2, -0.2rem -0.2rem 0.5rem @white;
-}
-.ry-input-item:focus + .ry-input__icon {
-  color: @primary;
-}
-.ry-input__icon {
-  height: 2rem;
-  position: absolute;
-  font-size: 2rem;
-  padding: 0 1rem;
-  display: -webkit-box;
-  display: flex;
-  color: @greyDark;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+
+  .ry-icon {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    font-size: 2rem;
+    padding: 0 1rem;
+    display: flex;
+    transition: 0.3s ease;
+    svg {
+      fill: @greyDark;
+    }
+  }
 }
