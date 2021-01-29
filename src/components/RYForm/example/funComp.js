@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { RYField, RYForm, RYInput, RYButton, RYSwitch } from '..';
+import React, { useCallback, useRef } from 'react';
+import { RYField, RYForm, RYInput, RYFormButton, RYSwitch } from '..';
 
 export default function RYFormExample() {
   const { current: rules } = useRef({
@@ -7,15 +7,16 @@ export default function RYFormExample() {
     code: { required: true, message: '请输入验证码！' },
   });
 
+  const onFinish = useCallback(state => {
+    console.log('success', state);
+  }, []);
+
+  const onFinishFailed = useCallback(err => {
+    console.log('err', err);
+  }, []);
+
   return (
-    <RYForm
-      onFinish={state => {
-        console.log('success', state);
-      }}
-      onFinishFailed={err => {
-        console.log('err', err);
-      }}
-    >
+    <RYForm onFinish={onFinish} onFinishFailed={onFinishFailed}>
       <RYField name="phone" rules={rules.phone}>
         <RYInput placeholder="please input your phone" />
       </RYField>
@@ -26,7 +27,7 @@ export default function RYFormExample() {
         <RYSwitch />
       </RYField>
       <RYField>
-        <RYButton>login</RYButton>
+        <RYFormButton type="secondary">login</RYFormButton>
       </RYField>
     </RYForm>
   );

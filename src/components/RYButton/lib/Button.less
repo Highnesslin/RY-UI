@@ -1,0 +1,93 @@
+.ry-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  margin: 50px;
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: 5px 5px 10px #c5cdd4, -5px -5px 10px #ffffff;
+  transition: box-shadow 0.2s ease;
+  font-family: sans-serif;
+  color: #333;
+  cursor: pointer;
+  z-index: 1;
+
+  border: none;
+  outline: 0;
+
+  &:before,
+  &:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: none;
+    transition: opacity 0.1s ease;
+    border-radius: 16px;
+  }
+  &:after {
+    opacity: 0;
+    background: linear-gradient(145deg, #d1d9e0, #f8ffff);
+  }
+  &:before {
+    opacity: 1;
+    background: linear-gradient(145deg, #f8ffff, #d1d9e0);
+  }
+  &:active:after {
+    opacity: 1;
+  }
+
+  &.error {
+    box-shadow: 5px 5px 10px #d99a95, -5px -5px 10px #ffd0c9;
+  }
+  &.error:before {
+    background: linear-gradient(145deg, #e6a39e, #ffc2bb);
+  }
+  &.error:after {
+    background: linear-gradient(145deg, #ffc2bb, #e6a39e);
+  }
+  &.success {
+    box-shadow: 5px 5px 10px #aec69a, -5px -5px 10px #ecffd0;
+  }
+  &.success:before {
+    background: linear-gradient(145deg, #b9d2a3, #dbf9c2);
+  }
+  &.success:after {
+    background: linear-gradient(145deg, #dbf9c2, #b9d2a3);
+  }
+  &.caution {
+    box-shadow: 5px 5px 10px #d9d59d, -5px -5px 10px #ffffd5;
+  }
+  &.caution:before {
+    background: linear-gradient(145deg, #e6e2a7, #ffffc6);
+  }
+  &.caution:after {
+    background: linear-gradient(145deg, #ffffc6, #e6e2a7);
+  }
+
+  &.info {
+    box-shadow: 5px 5px 10px #adcdd9, -5px -5px 10px #e9ffff;
+  }
+  &.info:before {
+    background: linear-gradient(145deg, #b7d9e6, #d9ffff);
+  }
+  &.info:after {
+    background: linear-gradient(145deg, #d9ffff, #b7d9e6);
+  }
+
+  &.primary {
+    box-shadow: 5px 5px 10px #b4c1d9, -5px -5px 10px #f4ffff;
+  }
+  &.primary:before {
+    background: linear-gradient(145deg, #bfcce6, #e3f3ff);
+  }
+  &.primary:after {
+    background: linear-gradient(145deg, #e3f3ff, #bfcce6);
+  }
+}
